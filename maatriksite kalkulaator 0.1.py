@@ -16,14 +16,15 @@ def sisesta_maatriks():  #Laseb kasutajal käsitsi sisestada maatriksi elemendid
             rida.append(liige)
         maatriks.append(rida)
     return maatriks
-def transponeeri(maatriks): #Transponeerib antud maatriksi
+def transponeeri(maatriks):
     trans=[]
-    for x in range(len(maatriks)):
-        rida=[]
-        for y in maatriks:
-            rida.append(y[x])
-        trans.append(rida)
-    return trans
+    for z in maatriks:    
+        for x in range(len(z)):
+            rida=[]
+            for y in maatriks:
+                rida.append(y[x])
+            trans.append(rida)
+        return trans
 def liida(m1, m2):  #Liidab maatriksid omavahel
     if len(m1)!=len(m2) or len(m1[0])!=len(m2[0]):
         return "Maatrikseid ei saa liita"
