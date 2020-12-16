@@ -215,7 +215,7 @@ while käsk in käsud:
             print(25*'-'+'\n'+'Tulemus:')
             uus_maatriks=korruta(m1, m2)
             formeeri(uus_maatriks)
-        elif käsk.upper()=="D" or käsk.lower()=='determinandi leidmine':
+        elif käsk.upper()=="D" or käsk.lower()=='determinandi leidmine'or käsk.lower()=='determinant':
             print('\t'+'Sisesta maatriksi elemendid!')
             m=sisesta_maatriks()
             formeeri(m)
