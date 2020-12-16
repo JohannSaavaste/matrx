@@ -1,3 +1,4 @@
+#Autorid: Johann Saavaste, Kadi-Liis Kivi
 def tagasta_maatriks(fail):  #Loeb tekstifailist maatriksi read
     f=open(fail, "r")
     jar=[]
@@ -13,7 +14,12 @@ def sisesta_maatriks():  #Laseb kasutajal käsitsi sisestada maatriksi elemendid
     for i in range(rida):
         rida=[]
         for j in range(veerg):
-            liige=int(input('Sisesta ' +str(i+1)+'. rea '+str(j+1)+'. element: '))
+            liige=None
+            while liige is None:
+                try:                   
+                    liige=float(input('Sisesta ' +str(i+1)+'. rea '+str(j+1)+'. element: '))
+                except ValueError:
+                    format(liige)
             rida.append(liige)
         maatriks.append(rida)
     return maatriks
@@ -135,8 +141,8 @@ while käsk in käsud:
     sisestamisviis=input('Kas sooviksid maatriksi sisestada failina või käsitsi? (f/k): ')
     if sisestamisviis=='failina' or sisestamisviis=='f':
         if käsk=="+" or käsk.lower()=='liitmine':
-            f1=input("Sisesta esimese maatriksi tekstidokumendi nimi:")
-            f2=input("Sisesta teise maatriksi tekstidokumendi nimi:")
+            f1=input("Sisesta esimese maatriksi tekstidokumendi nimi: ")
+            f2=input("Sisesta teise maatriksi tekstidokumendi nimi: ")
             m1,m2=tagasta_maatriks(f1), tagasta_maatriks(f2)
             print(25*'-')
             formeeri(m1)
@@ -146,8 +152,8 @@ while käsk in käsud:
             uus_maatriks=liida(m1, m2)
             formeeri(uus_maatriks)
         elif käsk=="-" or käsk.lower()=='lahutamine':
-            f1=input("Sisesta esimese maatriksi tekstidokumendi nimi:")
-            f2=input("Sisesta teise maatriksi tekstidokumendi nimi:")
+            f1=input("Sisesta esimese maatriksi tekstidokumendi nimi: ")
+            f2=input("Sisesta teise maatriksi tekstidokumendi nimi: ")
             m1,m2=tagasta_maatriks(f1), tagasta_maatriks(f2)
             print(25*'-')
             formeeri(m1)
@@ -157,8 +163,8 @@ while käsk in käsud:
             uus_maatriks=lahuta(m1, m2)
             formeeri(uus_maatriks)
         elif käsk=="*" or käsk.lower()=='korrutamine':
-            f1=input("Sisesta esimese maatriksi tekstidokumendi nimi:")
-            f2=input("Sisesta teise maatriksi tekstidokumendi nimi:")
+            f1=input("Sisesta esimese maatriksi tekstidokumendi nimi: ")
+            f2=input("Sisesta teise maatriksi tekstidokumendi nimi: ")
             m1,m2=tagasta_maatriks(f1), tagasta_maatriks(f2)
             print(25*'-')
             formeeri(m1)
@@ -168,15 +174,15 @@ while käsk in käsud:
             uus_maatriks=korruta(m1, m2)
             formeeri(uus_maatriks)
         elif käsk.upper()=="D" or käsk.lower()=='determinandi leidmine' or käsk.lower()=='determinant':
-            f=input("Sisesta maatriksi tekstidokumendi nimi:")
+            f=input("Sisesta maatriksi tekstidokumendi nimi: ")
             m=tagasta_maatriks(f)
             print(25*'-')
             formeeri(m)
             print(25*'-'+'\n'+'Tulemus:')
-            determinant=determinant(m)
-            print(determinant)
+            det=determinant(m)
+            print(det)
         elif käsk.upper()=="T" or käsk.lower()=='transponeerimine':
-            f=input("Sisesta maatriksi tekstidokumendi nimi:")
+            f=input("Sisesta maatriksi tekstidokumendi nimi: ")
             m=tagasta_maatriks(f)
             print(25*'-')
             formeeri(m)
@@ -225,11 +231,12 @@ while käsk in käsud:
         elif käsk.upper()=="D" or käsk.lower()=='determinandi leidmine'or käsk.lower()=='determinant':
             print('\t'+'Sisesta maatriksi elemendid!')
             m=sisesta_maatriks()
+            print(m)
             print(25*'-')
             formeeri(m)
             print(25*'-'+'\n'+'Tulemus:')
-            determinant=determinant(m)
-            print(determinant)
+            det=determinant(m)
+            print(det)
         elif käsk.upper()=="T" or käsk.lower()=='transponeerimine':
             print('\t'+'Sisesta maatriksi elemendid!')
             m=sisesta_maatriks()
