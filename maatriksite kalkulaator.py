@@ -20,6 +20,8 @@ def sisesta_maatriks():  #Laseb kasutajal käsitsi sisestada maatriksi elemendid
                     liige=float(input('Sisesta ' +str(i+1)+'. rea '+str(j+1)+'. element: '))
                 except ValueError:
                     format(liige)
+            if liige%1==0:
+                liige=int(liige)
             rida.append(liige)
         maatriks.append(rida)
     return maatriks
