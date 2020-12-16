@@ -138,6 +138,7 @@ while käsk in käsud:
             f1=input("Sisesta esimese maatriksi tekstidokumendi nimi:")
             f2=input("Sisesta teise maatriksi tekstidokumendi nimi:")
             m1,m2=tagasta_maatriks(f1), tagasta_maatriks(f2)
+            print(25*'-')
             formeeri(m1)
             print('+')
             formeeri(m2)
@@ -148,6 +149,7 @@ while käsk in käsud:
             f1=input("Sisesta esimese maatriksi tekstidokumendi nimi:")
             f2=input("Sisesta teise maatriksi tekstidokumendi nimi:")
             m1,m2=tagasta_maatriks(f1), tagasta_maatriks(f2)
+            print(25*'-')
             formeeri(m1)
             print('-')
             formeeri(m2)
@@ -158,6 +160,7 @@ while käsk in käsud:
             f1=input("Sisesta esimese maatriksi tekstidokumendi nimi:")
             f2=input("Sisesta teise maatriksi tekstidokumendi nimi:")
             m1,m2=tagasta_maatriks(f1), tagasta_maatriks(f2)
+            print(25*'-')
             formeeri(m1)
             print('*')
             formeeri(m2)
@@ -167,6 +170,7 @@ while käsk in käsud:
         elif käsk.upper()=="D" or käsk.lower()=='determinandi leidmine' or käsk.lower()=='determinant':
             f=input("Sisesta maatriksi tekstidokumendi nimi:")
             m=tagasta_maatriks(f)
+            print(25*'-')
             formeeri(m)
             print(25*'-'+'\n'+'Tulemus:')
             determinant=determinant(m)
@@ -174,12 +178,12 @@ while käsk in käsud:
         elif käsk.upper()=="T" or käsk.lower()=='transponeerimine':
             f=input("Sisesta maatriksi tekstidokumendi nimi:")
             m=tagasta_maatriks(f)
+            print(25*'-')
             formeeri(m)
             print(25*'-'+'\n'+'Tulemus:')
             uus_maatriks=transponeeri(m)
             formeeri(uus_maatriks)
         käsk=input('\n'+"Programmi käsud: +, -, *, D, T või muu sümbol lõpetamiseks: ")
-
         
     elif sisestamisviis=='käsitsi' or sisestamisviis=='k':
         if käsk=="+" or käsk.lower()=='liitmine':
@@ -187,6 +191,7 @@ while käsk in käsud:
             m1=sisesta_maatriks()
             print('\t'+'Sisesta teine maatriks!')
             m2=sisesta_maatriks()
+            print(25*'-')
             formeeri(m1)
             print('+')
             formeeri(m2)
@@ -198,6 +203,7 @@ while käsk in käsud:
             m1=sisesta_maatriks()
             print('\t'+'Sisesta teine maatriks!')
             m2=sisesta_maatriks()
+            print(25*'-')
             formeeri(m1)
             print('-')
             formeeri(m2)
@@ -209,6 +215,7 @@ while käsk in käsud:
             m1=sisesta_maatriks()
             print('\t'+'Sisesta teine maatriks')
             m2=sisesta_maatriks()
+            print(25*'-')
             formeeri(m1)
             print('*')
             formeeri(m2)
@@ -218,13 +225,15 @@ while käsk in käsud:
         elif käsk.upper()=="D" or käsk.lower()=='determinandi leidmine'or käsk.lower()=='determinant':
             print('\t'+'Sisesta maatriksi elemendid!')
             m=sisesta_maatriks()
-            formeeri(m)
             print(25*'-')
+            formeeri(m)
+            print(25*'-'+'\n'+'Tulemus:')
             determinant=determinant(m)
             print(determinant)
         elif käsk.upper()=="T" or käsk.lower()=='transponeerimine':
             print('\t'+'Sisesta maatriksi elemendid!')
             m=sisesta_maatriks()
+            print(25*'-')
             formeeri(m)
             print(25*'-'+'\n'+'Tulemus:')
             uus_maatriks=transponeeri(m)
